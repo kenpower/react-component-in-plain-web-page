@@ -1,12 +1,17 @@
 {
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "clsx": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
-    "@material-ui/core": "^4.11.3",
     "babelify": "^10.0.0",
-    "browserify": "^17.0.0"
-  },
-  "dependencies": {
-    "ci": "^2.0.0"
+    "browserify": "^17.0.0",
+    "react-scripts": "latest"
   }
 }
