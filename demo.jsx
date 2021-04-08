@@ -23,6 +23,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Box from '@material-ui/core/Box';
 import {withStyles} from "@material-ui/core";
+import ColorBox from "./ColorBox";
 
 
 
@@ -154,72 +155,18 @@ const useStyles = makeStyles((theme) => ({
   sticky:{
     position: "sticky",
     left: 0,
-    background: "#ddd",  
+    background: "#eee",  
     zIndex: "10",
     minWidth: "125"
   },
   stickyr:{
     position: "sticky",
     right: 0,
-    background: "#ddd",  
+    background: "#eee",  
     zIndex: "10",
     minWidth: "125"
   },
 
-
-  circle:{
-    maxWidth:"20",
-    maxHeight:"20",
-    background:"#f00",
-    color:"#f00",
-    borderRadius: "25%",
-    align: "center",
-    margin: "auto",
-    marginTop:"2",
-    marginBottom:"2",
-    border:"1"
-    
-  },
-
-  na: {
-    background:"#ccc",
-    color:"#ccc",
-  },
-
-  circle1: {
-    background:"#030",
-    color:"#030",
-  },
-
-  circle2: {
-    maxWidth:"20",
-    maxHeight:"20",
-    background:"#060",
-    color:"#060",
-    borderRadius: "25%"
-  },
-
-  circle3: {
-    maxWidth:"20",
-    maxHeight:"20",
-    background:"#090", 
-    color:"#090",
-    borderRadius: "25%"
-  },
-  circle4: {
-    maxWidth:"20",
-    maxHeight:"20",
-    background:"#0c0",
-    color:"#0c0",
-    borderRadius: "25%"
-  },
-  circle5: {
-    maxWidth:"20",
-    maxHeight:"20",
-    background:"#0f0",
-    color:"#0f0",
-    borderRadius: "25%"
-  },
 
   root: {
     width: '800',
@@ -341,7 +288,10 @@ export default function EnhancedTable() {
                         return(
                           <TableCell className = {col.stickyLeft ? classes.sticky : (col.stickyRight ? classes.stickyr : "")}  
                             component="th" id={labelId} scope="row" padding="none" align= {col.numeric ? 'center' : 'left'}>
-                          {col.circle ? (<Box className = {(col[row] ?classes["circle"+col[row]]:classes.na)+' '+classes.circle}>_</Box>) : col[row]?col[row]:"N/A"} 
+                          {col.circle  
+                            ? ( <ColorBox value = {col[row]} >X</ColorBox>) 
+                            : col[row]?col[row]:"N/A"
+                            } 
                         </TableCell>
                         )
                       })
