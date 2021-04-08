@@ -1,9 +1,57 @@
-<body>
+<body onload="init()">
     <!-- Fonts to support Material Design -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <!-- Icons to support Material Design -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <script type="module" src = "bin/demo.js"></script>
+    <style>
+        .sticky{
+            position: sticky;
+            left: 0;
+            background: white
+        }
+    </style>
+
+    <script type="module" src="bin/demo.js"></script>
+    <script>
+
+            rowIds= ["ts","fo","ps","or","sp"]
+
+            var cols = [
+                {id: "skills", label:"Skill", stickyLeft: true, ts: 'Thesis Statement', fo: 'Focus', ps: 'Paragraph Structure', or: 'Ordering', sp:'Signposting' },
+                {id:"il", label:"Internalised Level", ts: 3, fo: 0, ps: 1, or: 2, sp:5, numeric:1, circle:1},
+                {id:"m1", label:"Methodology V1", ts: 4, fo: 0, or: 2, sp:3, numeric:1, circle:1},
+                {id:"m2", label:"Methodology V2", ts: 3, ps: 1, or: 2, sp:3, numeric:1},
+                {id:"os", label:"Overall Skill Level", ts: 3, fo: 2, ps: 1, or: 2, sp:3, stickyRight: true, numeric:1},
+            ];
+
+            var m=3
+
+        function init() {
+
+
+
+            util.renderTable(rowIds, cols, '#root');
+
+            //util.render();
+        }
+
+
+
+        function click1() {
+            
+
+            newCol = {id:"m"+m, label:"Methodology V"+m, ts: Math.floor(Math.random() * 5) + 1 , fo: Math.floor(Math.random() * 5) + 1, ps: Math.floor(Math.random() * 5) + 1, or: Math.floor(Math.random() * 5) + 1, sp:Math.floor(Math.random() * 5) + 1, numeric:1}
+
+            if(Math.floor(Math.random() * 2) == 0)
+                newCol.circle=1
+
+            m=m+1;
+            cols.splice(cols.length-1,0,newCol)
+
+
+            util.renderTable(rowIds, cols, '#root');
+        }
+    </script>
+    <button onclick="click1()">Click</button>
     <div id="root"></div>
 </body>
-        
