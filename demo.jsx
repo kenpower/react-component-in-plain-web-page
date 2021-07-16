@@ -72,7 +72,7 @@ function EnhancedTableHead(props) {
                   key=          {"head" + c.id}
                   align=        {c.numeric ? 'center': 'left'}
                   >
-              {c.label}
+              {c.link_to_review ? <a href={c.link_to_review}>{c.label}</a> : c.label}
               </TableCell>
               )})}
       </TableRow>

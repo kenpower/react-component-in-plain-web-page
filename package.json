@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",

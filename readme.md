@@ -28,7 +28,7 @@ and these Babel presets
 Following converts the (node/react) `demo.jsx` to a browser runnable script. (transpile step)
 
 ```
-./node_modules/.bin/browserify demo.jsx --transform babelify --standalone util > ./bin/demo.js
+./node_modules/.bin/browserify demo.jsx --transform babelify --standalone dashboard > ./bin/demo.js
 ```
 
 Serve the page locally: `python localhost.py`
