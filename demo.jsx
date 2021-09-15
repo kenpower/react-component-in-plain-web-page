@@ -290,7 +290,7 @@ export default function EnhancedTable() {
                             component="th" id={labelId} scope="row" padding="none" align= {col.numeric ? 'center' : 'left'}>
                           {col.circle  
                             ? ( <ColorBox value = {col[row]} >X</ColorBox>) 
-                            : col[row]?col[row]:"N/A"
+                            : col[row]!==undefined ?col[row]:""
                             } 
                         </TableCell>
                         )
